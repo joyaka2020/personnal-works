@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+}
+h2,
+h3 {
+  font-family: 'Lato', sans-serif;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+
+/*******************
+HEADER
+********************/
+header {
+  background-image: linear-gradient(to top right, rgba(1, 1, 114, 0.119), rgba(0, 0, 255, 0.125)),
+    url(../img/bannière.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+header nav img {
+  height: 150px;
+}
+header div div {
+  padding: 150px 0;
+}
+header h1 {
+  font-size: 40px;
+}
+
+header .button {
+  background: yellow;
+  border-radius: 50px;
+  color: rgb(3, 3, 63);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  padding: 10px 30px;
+}
+header .button:hover {
+  background: rgb(3, 3, 63);
+  color: yellow;
+}
+
+
+
+/* SECTION RECHERCHE */
+#recherche {
+  border-radius:30px 30px 0  0;
+  background-color: white;
+  margin-top: -80px;
+  position: relative;
+  padding: 20px 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#recherche article {
+  text-align: end;
+  padding-top: 20px;
+}
+
+#recherche .button {
+  background: rgb(3, 3, 63);
+  border-radius: 50px;
+  color:  yellow;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  padding: 10px 50px;
+  
+}
+#recherche .button:hover {
+  background: yellow;
+  color:  rgb(3, 3, 63);
+}
+
+
+* {
+  transition: 0.3s all ease;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+}
+.menu li {
+  color: white;
+  padding: 15px 20px;
+  background: rgba(85, 145, 170, 0.098);
+  background-size: cover;
+  background-position: center;
+}
+.menu li:hover {
+  background: rgb(3, 3, 63);
+  color: yellow;
+}
+.menu li.sub {
+  padding-right: 30px;
+  position: relative;
+}
+.menu li.sub>a {
+  position: relative;
+}
+
+.menu .submenu {
+  position: absolute;
+  top: 48px;
+  /* Par défaut, le sous menu est caché, on réduit donc sa hauteur en Y à 0 */
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+}
+.menu>li:hover .submenu {
+  /* on ne l'affiche qu'au hover de la li, en repassant sa hauteur à 100% */
+  transform: scaleY(1);
+}
+.menu .button {
+  border-radius: 10px;
+  text-align: center;
+  background: yellow;
+  color: rgb(3, 3, 63);
+}
+
+
+
+
+form div:not(.label) label {
+  width: 150px;
+}
+form .label label {
+  margin-right: 120px;
+  margin-left: 5px;
+}
+form .marque select {
+  padding: 10px;
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 60px;
+  margin-left: 20px;
+  border: none;
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.2) inset; 
+}
+form #details select {
+  padding: 10px;
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 30px;
+  border: none;
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.2) inset; 
+}
+
+
+
+#annonce {
+  border-radius:30px 30px 0  0;
+  background-color: white;
+  margin-top: -80px;
+  position: relative;
+  padding: 20px 30px;
+  text-align: center;
+}
+#annonce article {
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+form #annonce {
+  padding: 10px;
+  width: 300px;
+  border: none;
+}
+#annonce .button {
+  background: rgb(3, 3, 63);
+  color:  yellow;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  padding: 10px 50px;
+}
+#annonce .button:hover {
+  background: yellow;
+  color:  rgb(3, 3, 63);
+}
+
+
+/* IDENTIFICATION */
+.identification {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(3, 3, 63);
+}
+.identification {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.identification *:not(.bouton) {
+  width: 50%;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  color: rgb(3, 3, 63);
+}
+.identification *:not(h4) {
+  width: 50%;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  color: rgb(3, 3, 63);
+}
+.identification *::placeholder {
+  color: rgb(3, 3, 63);
+  font-size: 18px;
+}
+.identification .bouton {
+  background: red !important;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: none;
+  margin-top: -35px;
+  position: relative;
+}
+
+
+
+/*GARAGE*/
+#garage {
+  background-color: white;
+  margin-top: 20px;
+  position: relative;
+  padding: 10px 50px;
+}
+
+#garage article {
+  display: flex;
+  align-items: center;
+}
+
+#garage .button {
+  background: rgb(3, 3, 63);
+  border-radius: 50px;
+  color:  yellow;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  padding: 10px 50px;
+  
+}
+#garage .button:hover {
+  background: yellow;
+  color:  rgb(3, 3, 63);
+}
+
+
+
+
+#garage1 {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+#garage1 img {
+  width: 150px;
+  padding-right: 25px ;
+}
+#garage1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#garage1 article {
+  width: 50%;
+}
+
+
+
+
+#neuve h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  padding-left: 20px;
+}
+#neuve h3 {
+  font-weight: bold;
+  color: rgb(3, 3, 63);
+}
+#neuve h3::before {
+  content: "";
+  height: 2px;
+  width: 40px;
+  background: yellow
+}
+#neuve h4 {
+  font-weight: bold;
+}
+#neuve img {
+  width: 250px;
+}
+#neuve ul {
+  display: flex;
+  justify-content: center;
+  padding: 20px 10px;
+}
+#neuve ul li {
+  margin-right: 15px;
+  padding-bottom: 20px;
+}
+
+
+
+
+#occaz h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  padding-left: 20px;
+}
+#occaz h3 {
+  font-weight: bold;
+  color: rgb(3, 3, 63);
+}
+#occaz h3::before {
+  content: "";
+  height: 2px;
+  width: 40px;
+  background: yellow
+}
+#occaz h4 {
+  font-weight: bold;
+}
+#occaz img {
+  width: 250px;
+}
+#occaz ul {
+  display: flex;
+  justify-content: center;
+  padding: 20px 10px;
+}
+#occaz ul li {
+  margin-right: 15px;
+  padding-bottom: 20px;
+}
+
+
+
+#essai h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  padding-left: 20px;
+}
+#essai h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+#essai img {
+  width: 500px;
+}
+#essai ul {
+  display: flex; 
+  flex-direction: column-reverse;
+}
+#essai ul li {
+  margin-right: 15px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0;
+}
+#essai ul li:nth-of-type(even) {
+  flex-direction: row-reverse;
+  margin: 20px;
+}
+
+
+
+
+#gestionannonce h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  padding-left: 20px;
+}
+#gestionannonce h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+#gestionannonce img {
+  width: 500px;
+  padding-bottom: 10px;
+}
+
+#gestionannonce ul li {
+  margin-right: 15px;
+  margin-top: 30px;
+  display: flex;
+  align-items: left;
+  text-align: left;
+  padding: 10px 0;
+}
+#gestionannonce ul li div {
+  margin-right: 30px;
+  padding: 10px 0;
+}
+#gestionannonce .button {
+  background: yellow;
+  border-radius: 50px;
+  color: rgb(3, 3, 63);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  padding: 10px 50px;
+  
+}
+#gestionannonce .button:hover {
+  background: rgb(3, 3, 63);
+  color:  yellow;
+}
+
+
+
+
+
+#logomarque h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  padding-top: 20px;
+  margin-left: 20px;
+
+}
+#logomarque img {
+  width: 900px;
+  margin-left: 90px;
+}
+
+
+
+
+/* FOOETER */
+footer
+{
+  background:linear-gradient(rgb(3, 3, 63)90%, rgba(255, 255, 0, 0.988)10%);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 20px 0;
+}
+footer article {
+  display: flex;
+  align-items: center;
+}
+footer article div {
+  display: flex;
+}
+footer article ul {
+  display: flex;
+  
+}
+footer article ul li img {
+  width: 30px;
+  height: 30px;
+}
+footer article ul li {
+ padding-left: 10px;
+}
+footer h5
+{
+	color: #fff;
+  padding-left: 20px;
+}
