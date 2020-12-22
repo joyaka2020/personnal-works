@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Mandali&family=Raleway:wght@400;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  max-width: 1060px;
+  margin: auto;
+  padding: 50px 15px;
+  font-family: "Raleway", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Mandali", sans-serif;
+}
+
+h2 {
+  color: #6e8e9b;
+  margin-top: 40px;
+  position: relative;
+  margin-bottom: 105px;
+}
+h2::after {
+  content: ""; /*<----- OBLIGATOIRE*/
+  height: 50px;
+  width: 2px;
+  background: #6e8e9b;
+  position: absolute;
+  left: 3px;
+  top: 65px;
+}
+
+.btn {
+  color: black !important;
+  background: white;
+  padding: 8px 15px;
+  border-radius: 50px;
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+  display: inline-block;
+}
+.btn:hover {
+  color: white !important;
+  background: #6e8e9b;
+}
+
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url(../img/yogamat.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 15px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+}
+header ul li {
+  margin-left: 20px;
+}
+header div {
+  text-align: center;
+  padding: 80px 0 100px;
+}
+header h1 {
+  font-size: 80px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 0;
+  line-height: 80px;
+}
+
+#concept ul li {
+  display: flex;
+  align-items: center;
+}
+
+#concept ul li img {
+  width: 70px;
+  height: 70px;
+  margin: 30px;
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+#contact form * {
+  font-family: "Raleway", sans-serif;
+}
+
+/* les label qui ont la classe btn
+  les éléments qui ont la classe btn et qui sont des label
+*/
+#contact form label.btn {
+  margin-left: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+#contact form input[type="radio"] {
+  display: none;
+}
+#contact form input[type="radio"]:checked + label.btn {
+  background: #6e8e9b;
+  color: white !important;
+}
+
+#contact form input:not([type="submit"]):not([type="radio"]) {
+  max-width: 400px;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2) inset;
+}
+
+#contact form input:not([type="submit"])::placeholder {
+  color: #6e8e9bcb;
+}
+#contact form input[type="submit"] {
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+#cours article {
+  display: flex;
+  align-items: center;
+}
+
+#cours article img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 76% center;
+  margin-right: 50px;
+}
+
+#cours article {
+    align-items: flex-start;
+}
+#cours article img {
+    width: 180px;
+    height: 180px;
+    margin-right: 20px;
+}
+
+footer {
+  background: #6e8e9b;
+  padding: 10px 0;
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+/* footer {
+  background: #6e8e9b;
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/*media querie ordinateur*/
+@media (min-width: 991px) {
+  #concept ul li:nth-of-type(odd) {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 767px) {
+  h2 {
+    text-align: center;
+  }
+  h2::after {
+    left: calc(50% - 1px);
+  }
+
+  header h1 {
+    font-size: 45px;
+    letter-spacing: 5px;
+  }
+
+  #concept ul li {
+    flex-direction: column;
+    text-align: center;
+  }
+}

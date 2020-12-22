@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire Evasion</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Candidater pour partir en voyage</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur
+        <strong>adipisicing elit</strong>. Fuga, expedita! Amet, est sapiente!
+        Corrupti minima quo error non quis velit cum magnam provident delectus
+        neque? Voluptas ipsa porro minima! Nobis.
+      </p>
+    </header>
+
+    <form action="">
+      <fieldset>
+        <legend>Coordonnées</legend>
+        <div>
+          <label for="email">Votre email <i>(*)</i> :</label>
+          <input
+            type="email"
+            name=""
+            id="email"
+            placeholder="exemple@mail.com"
+            required
+          />
+        </div>
+        <div>
+          <label for="phone">Votre téléphone :</label>
+          <input type="tel" name="" id="phone" placeholder="0102030405" />
+        </div>
+      </fieldset>
+      <!-- fin coordonnées -->
+      <fieldset>
+        <legend>Informations personnelles</legend>
+        <div>
+          <label for="lastname">Votre nom :</label>
+          <input type="text" name="" id="lastname" placeholder="Dupond" />
+        </div>
+        <div>
+          <label for="firstname">Votre prénom :</label>
+          <input type="text" name="" id="firstname" placeholder="Toto" />
+        </div>
+        <hr />
+        <div class="label">
+          Vous êtes plutôt :
+          <input type="radio" name="sexe" id="female" />
+          <label for="female">Femme</label>
+          <input type="radio" name="sexe" id="male" />
+          <label for="male">Homme</label>
+          <input type="radio" name="sexe" id="other" />
+          <label for="other">A déterminer</label>
+        </div>
+        <hr />
+        <div>
+          <label for="address">Votre adresse :</label>
+          <input type="text" name="" id="address" />
+        </div>
+        <div>
+          <label for="postal">Votre code postal :</label>
+          <input type="text" name="" id="postal" maxlength="5" size="5" />
+        </div>
+        <div>
+          <label for="city">Votre ville :</label>
+          <input type="text" name="" id="city" />
+        </div>
+        <div>
+          <label for="dep">Votre département</label>
+          <select name="" id="dep">
+            <option value="">Choisissez votre département</option>
+            <option value="04">Alpes de Haute Provence</option>
+            <option value="05">Hautes-Alpes</option>
+            <option value="13">Bouches du Rhône</option>
+          </select>
+        </div>
+        <hr />
+        <div>
+          <p>
+            Combien êtes vous prêt à investir pour valider votre candidature ?
+          </p>
+          <label for="budget">Budget :</label>
+          200€<input
+            type="range"
+            name=""
+            id="budget"
+            min="200"
+            max="3000"
+            step="100"
+          />3000€
+        </div>
+      </fieldset>
+      <fieldset class="label">
+        <legend>Langues</legend>
+        <p>Merci de renseigner les langues que vous parlez :</p>
+        <input type="checkbox" name="language[]" id="english" /><label
+          for="english"
+          >Anglais</label
+        >
+        <input type="checkbox" name="language[]" id="spanish" /><label
+          for="spanish"
+          >Espagnol</label
+        >
+        <input type="checkbox" name="language[]" id="french" /><label
+          for="french"
+          >Français</label
+        >
+        <input type="checkbox" name="language[]" id="german" /><label
+          for="german"
+          >Allemand</label
+        >
+        <input type="checkbox" name="language[]" id="armenian" /><label
+          for="armenian"
+          >Arménien</label
+        >
+      </fieldset>
+      <fieldset>
+        <legend>Vos destinations de rêve</legend>
+        <label for="destination">Choisir vos destinations</label>
+        <select name="" id="destination" multiple>
+          <optgroup label="Outre-mer">
+            <option value="Martinique">Martinique</option>
+            <option value="Réunion">Réunion</option>
+            <option value="Guadeloupe">Guadeloupe</option>
+            <option value="Guyane">Guyane</option>
+            <option value="Mayotte">Mayotte</option>
+          </optgroup>
+          <optgroup label="Etranger">
+            <option value="New-York">New-York</option>
+            <option value="Hawaï">Hawaï</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Australie">Australie</option>
+            <option value="Brésil">Brésil</option>
+          </optgroup>
+        </select>
+      </fieldset>
+      <input type="submit" value="Envoyer" />
+    </form>
+  </body>
+</html>

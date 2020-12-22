@@ -1,0 +1,27 @@
+body {
+  background: linear-gradient(
+      to bottom right,
+      rgba(255, 192, 203, 0.308),
+      rgba(0, 255, 255, 0.349)
+    ),
+    url(background.jpg);
+  background-size: cover;
+  min-height: 100vh;
+}
+
+form div label {
+  width: 150px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+form .label label {
+  width: auto;
+  margin-right: 20px;
+}
+
+/*la balise select qui a l'id "destination"*/
+select#destination {
+  width: 200px;
+  height: 150px;
+}
