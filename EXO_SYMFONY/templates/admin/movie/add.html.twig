@@ -1,0 +1,13 @@
+{% extends "admin/base.html.twig" %}
+
+{% block body %}
+    {# form dans les parenthèses est la variable qu'on envoie depuis le contrôleur #}
+    {{ form_start(form) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.genres) }}
+        {{ form_row(form.poster) }}
+        <button class="btn btn-primary">Envoyer</button>
+    {# Au moment où on appelle form_end, twig génère tous les champs de form qui n'ont pas encore été affichés #}
+    {# C'est super utile pour ne pas se soucier du champs _token nécessaire pour la sécurité du formulaire #}
+    {{ form_end(form) }}
+{% endblock %}

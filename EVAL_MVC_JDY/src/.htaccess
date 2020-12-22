@@ -1,0 +1,3 @@
+# On ne veut pas rendre accessible le PHP
+
+deny from all

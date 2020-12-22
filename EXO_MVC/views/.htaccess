@@ -1,0 +1,2 @@
+# Interdiction d'accéder directement au répertoire
+deny from all

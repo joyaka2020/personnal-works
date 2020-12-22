@@ -1,0 +1,55 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Movie{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <h2>Films</h2>
+        </div>
+    </div>
+    {% if is_granted('ADD', movies[0]) %}
+      <div class="row">
+          <div class="col">
+              <a href="{{ path('admin_movie_add') }}" class="btn btn-primary">Ajouter un film</a>
+          </div>
+      </div>
+    {% endif %}
+
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Date de création</th>
+      <th scope="col">Dernière modification</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for movie in movies %}
+    <tr{{ cycle(['', ' class="table-dark"'], loop.index)|raw }}>
+      <th scope="row">{{ movie.id }}</th>
+      <td>{{ movie.title }}</td>
+      <td>{{ movie.createdAt|date('Y-m-d H:i') }}</td>
+      <td>{{ movie.updatedAt ? movie.updatedAt|date('Y-m-d H\\hi') }}</td>
+      {# On affiche les boutons Modifier et Supprimer que si l'utilisateur est Admin #}
+      {# isGranted() retourne true pour indiquer si l'utilisateur a au moins le ROLE_ADMIN ou non #}
+      {% if is_granted('ROLE_ADMIN') %}
+        <td><a href="{{ path('admin_movie_edit', {id: movie.id}) }}" class="btn btn-warning">Modifier</a>
+        
+        <form action="{{ path('admin_movie_delete', {id: movie.id}) }}" method="post" class="d-inline">
+          <button class="btn btn-danger">Supprimer</button>
+          {#
+          Cet input caché parmet de contourner la limite sur la méthode HTTP
+          d'un formulaire et permet de simuler une requête avec la méthode DELETE
+          #}
+          <input type="hidden" name="_method" value="delete">
+        </form>
+        </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

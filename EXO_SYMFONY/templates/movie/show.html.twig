@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="row">
+    <div class="col">
+        <h2>{{ movie.title }}</h2>
+    </div>
+</div>
+
+<a href="{{ path('movie_list') }}">Retour à la page d'accueil</a>
+
+<div class="row">
+    <div class="col">
+        <h3>Genre</h3>
+        <ul class="list-unstyled">
+        {% for genre in movie.genres %}
+            <li>{{ genre.name }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+        <div class="col">
+        <h3>Casting</h3>
+        <ul class="list-unstyled">
+        {% for casting in movie.castings %}
+            <li>{{ casting.role }} (<em>{{ casting.person.name }}</em>)</li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

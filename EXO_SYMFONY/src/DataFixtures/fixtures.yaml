@@ -1,0 +1,55 @@
+# On met le FQCN (Fully Qualified Class Name, le nom de classe avec son namespace) de nos entités
+App\Entity\Movie:
+    # On identifie les movies qu'on s'apprête à créer
+    movie_{1..70}:
+        title (unique): '<catchPhrase()>'
+        genres: '<numberBetween(1, 4)>x @genre_*'
+
+App\Entity\Genre:
+    genre_{1..35}:
+        name (unique): '<colorName()>'
+
+App\Entity\Person:
+    person_{1..300}:
+        name: '<name()>'
+
+App\Entity\Casting:
+    casting_{1..500}:
+        role: '<firstname()>'
+        movie: '@movie_*'
+        person: '@person_*'
+        creditOrder: '<numberBetween(1, 40)>'
+
+App\Entity\Department:
+    department_{1..25}:
+        name (unique): '<word()>'
+
+App\Entity\Job:
+    job_{1..300}:
+        name: '<jobTitle()>'
+        department: '@department_*'
+
+App\Entity\CrewMember:
+    crew_member_{1..900}:
+        movie: '@movie_*'
+        person: '@person_*'
+        job: '@job_*'
+
+App\Entity\Director:
+    director_{1..15}:
+        movie: '@movie_*'
+        person: '@person_*'
+
+App\Entity\User:
+    user_1:
+        email: 'djyp@oclock.io'
+        roles: '[]'
+        password: '\$argon2id\$v=19\$m=65536,t=4,p=1\$lcVtkaBubtM10guIEd7J2A\$0MFivrQ2P4qFVIRl4apJofxyeSchkdZJHvxBe4hlR/o'
+    user_2:
+        email: 'milo@home.dodo'
+        roles: '[ROLE_ADMIN]'
+        password: '\$argon2id\$v=19\$m=65536,t=4,p=1\$lcVtkaBubtM10guIEd7J2A\$0MFivrQ2P4qFVIRl4apJofxyeSchkdZJHvxBe4hlR/o'
+    user_4:
+        email: 'ben@oclock.io'
+        roles: '[ROLE_USER]'
+        password: '\$argon2id\$v=19\$m=65536,t=4,p=1\$lcVtkaBubtM10guIEd7J2A\$0MFivrQ2P4qFVIRl4apJofxyeSchkdZJHvxBe4hlR/o'
