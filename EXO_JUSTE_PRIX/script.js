@@ -39,6 +39,7 @@
                     btnTry.type = 'submit';
                     btnTry.id = 'submit';
                     btnTry.innerHTML = 'Jouer';
+                    btnTry.style.color = 'red';
                     test.appendChild(btnTry);
 
                     let nbTry = 0;
