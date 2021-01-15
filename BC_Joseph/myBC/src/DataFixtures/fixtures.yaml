@@ -1,0 +1,64 @@
+App\Entity\Address:
+  address_{1..100}:
+    ligne_1: "<streetAddress()>"
+    postal_code: "<postcode()>"
+    city: "<city()>"
+
+App\Entity\Announcement:
+  announcement_{1..150}:
+    title: "<jobTitle()>"
+    price: "<numberBetween(1, 40)>"
+    year: "<year()>"
+    mileage: "<isbn13()>"
+    depositDate: "<dateTime()>"
+    description: "<catchPhrase()>"
+    announcementReference: "<ean8()>"
+    model: "@model_*"
+    garage: "@garage_*"
+    energy: "@energy_*"
+
+App\Entity\Contact:
+  contact_{1..200}:
+    name: "<lastName()>"
+    phone: "<randomNumber()>"
+    mail: "<email()>"
+    comment: "<text()>"
+    announcement: "@announcement_*"
+
+App\Entity\Energy:
+  energy_{1..80}:
+    type: "<jobTitle()>"
+
+App\Entity\Garage:
+  garage_{1..70}:
+    denomination: "<company()>"
+    phone: "<phoneNumber()>"
+    createdAt: "<dateTime()>"
+    observation: "<paragraph()>"
+    professionnal: "@professionnal_*"
+    address (unique): "@address_*"
+
+App\Entity\Professionnal:
+  professionnal_{1..160}:
+    # email: "<email()>"
+    # roles (unique): ["ROLE_USER"]
+    # password: "password()"
+    lastname: "<name()>"
+    firstname: "<firstName()>"
+    mail: "<email()>"
+    phone: "<phoneNumber()>"
+    siretNumber: "<randomNumber()>"
+
+App\Entity\Brand:
+  brand_{1..120}:
+    name: "<jobTitle()>"
+
+App\Entity\Model:
+  model_{1..120}:
+    name: "<lastName()>"
+    brand: "@brand_*"
+
+App\Entity\Photo:
+  photo_{1..130}:
+    name: "<userName()>"
+    announcement: "@announcement_*"

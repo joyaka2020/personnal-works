@@ -1,0 +1,38 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Garage{% endblock %}
+
+{% block body %}
+    <h1>Garage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ garage.id }}</td>
+            </tr>
+            <tr>
+                <th>Denomination</th>
+                <td>{{ garage.denomination }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ garage.phone }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ garage.createdAt ? garage.createdAt|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Observation</th>
+                <td>{{ garage.observation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_garage_index') }}">back to list</a>
+
+    <a href="{{ path('admin_garage_edit', {'id': garage.id}) }}">edit</a>
+
+    {{ include('admin/garage/_delete_form.html.twig') }}
+{% endblock %}

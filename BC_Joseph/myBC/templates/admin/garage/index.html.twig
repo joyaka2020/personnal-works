@@ -1,0 +1,41 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Garage-Admin{% endblock %}
+
+{% block body %}
+    <h1>Garages</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Dénomination</th>
+                <th>Téléphone</th>
+                <th>Date</th>
+                <th>Observation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for garage in garages %}
+            <tr>
+                <td>{{ garage.id }}</td>
+                <td>{{ garage.denomination }}</td>
+                <td>{{ garage.phone }}</td>
+                <td>{{ garage.createdAt ? garage.createdAt|date('Y-m-d') : '' }}</td>
+                <td>{{ garage.observation }}</td>
+                <td>
+                    <a href="{{ path('admin_garage_show', {'id': garage.id}) }}">show</a>
+                    <a href="{{ path('admin_garage_edit', {'id': garage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_garage_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annonces{% endblock %}
+
+{% block body %}
+    <h1>Annonces</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Prix</th>
+                <th>Année</th>
+                <th>Kilométrage</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Référence</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for announcement in announcements %}
+            <tr>
+                <td>{{ announcement.id }}</td>
+                <td>{{ announcement.title }}</td>
+                <td>{{ announcement.price }}</td>
+                <td>{{ announcement.year }}</td>
+                <td>{{ announcement.mileage }}</td>
+                <td>{{ announcement.depositDate ? announcement.depositDate|date('Y-m-d') : '' }}</td>
+                <td>{{ announcement.description }}</td>
+                <td>{{ announcement.announcementReference }}</td>
+                <td>
+                    <a href="{{ path('announcement_show', {'id': announcement.id}) }}">show</a>
+                    <a href="{{ path('announcement_edit', {'id': announcement.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('announcement_new') }}">Create new</a>
+{% endblock %}

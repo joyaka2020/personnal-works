@@ -1,0 +1,46 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Professionnel-Admin{% endblock %}
+
+{% block body %}
+    <h1>Professionnels</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Siret</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for professionnal in professionnals %}
+            <tr>
+                <td>{{ professionnal.id }}</td>
+                <td>{{ professionnal.lastname }}</td>
+                <td>{{ professionnal.firstname }}</td>
+                <td>{{ professionnal.mail }}</td>
+                <td>{{ professionnal.phone }}</td>
+                <td>{{ professionnal.siretNumber }}</td>
+                <td>
+                    <a href="{{ path('admin_professionnal_show', {'id': professionnal.id}) }}">show</a>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('admin_professionnal_edit', {'id': professionnal.id}) }}">edit</a>
+                {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('admin_professionnal_new') }}">Create new</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Annonce{% endblock %}
+
+{% block body %}
+    <h1>Nouvelle Annonce</h1>
+
+    {{ include('announcement/_form.html.twig') }}
+
+    <a href="{{ path('announcement_index') }}">back to list</a>
+{% endblock %}
+

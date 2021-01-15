@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col">
+        <h3>Avec la variable user reçue depuis le contrôleur</h3>
+        <p>{{ user.email }}</p>
+        <p>
+            {% if 'ROLE_ADMIN' in user.roles %}
+                Administrateur
+            {% elseif 'ROLE_USER' in user.roles %}
+                Utilisateur
+            {% else %}
+                Ce User n'a pas de rôle
+            {% endif %}
+        </p>
+    </div>
+    <div class="col">
+        <h3>Avec la variable user présente dans Twig</h3>
+        {# app.user fournit l'utilisateur connecté dans tous les templates #}
+        <p>{{ app.user.email }}</p>
+        <p>
+            {% if 'ROLE_ADMIN' in app.user.roles %}
+                Administrateur
+            {% elseif 'ROLE_USER' in app.user.roles %}
+                Utilisateur
+            {% else %}
+                Ce User n'a pas de rôle
+            {% endif %}
+        </p>
+    </div>
+</div>
+
+{% endblock %}
